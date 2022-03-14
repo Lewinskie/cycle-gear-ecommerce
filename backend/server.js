@@ -22,6 +22,7 @@ app.use(
 
 //ROUTES
 app.use("/user", require("./routes/userRouter"));
+app.use("/api", require("./routes/categoryRouter"));
 
 //PORT
 const PORT = process.env.PORT;
