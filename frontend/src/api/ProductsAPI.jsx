@@ -7,12 +7,13 @@ const ProductsAPI = () => {
     const res = await axios.get("/api/products");
     setProducts(res.data.products);
   };
+  // console.log(products)
 
   useEffect(() => {
     getProducts();
   }, []);
 
-  return <div>products:[products,setProducts]</div>;
+  return { products: [products, setProducts] };
 };
 
 export default ProductsAPI;

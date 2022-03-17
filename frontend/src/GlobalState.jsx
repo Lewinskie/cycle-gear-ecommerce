@@ -7,7 +7,7 @@ export const DataProvider = ({ children }) => {
   const [token, setToken] = useState(false);
   const state = {
     token: [token, setToken],
-    ProductsAPI: ProductsAPI,
+    ProductsAPI: ProductsAPI(),
   };
   return <GlobalState.Provider value={state}>{children}</GlobalState.Provider>;
 };
