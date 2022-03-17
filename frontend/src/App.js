@@ -1,17 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import BootcampsPage from "./pages/BootcampsPage";
-import Navbar from "./components/Navbar";
+import { DataProvider } from "./GlobalState";
+import Header from "./components/headers/Header";
+import MainPages from "./components/mainpages/Pages";
 
 function App() {
   return (
-    <>
-      <Navbar />
+    <DataProvider>
       <Router>
-        <Routes>
-          <Route path="/" element={<BootcampsPage />} />
-        </Routes>
+        <div className="App">
+          <Header />
+          <MainPages />
+        </div>
       </Router>
-    </>
+    </DataProvider>
   );
 }
 

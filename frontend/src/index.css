@@ -1,6 +1,26 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  background: #f4f4f4;
- 
 }
+.App {
+  max-width: 1220px;
+  min-height: 100vh;
+  margin: 0px auto;
+  padding: 0px 20px;
+  box-shadow: 0px 0px 35px #eee;
+}
+a {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+
+/* --------Header---------  */
+
+@import url('./components/headers/header.css')
 
