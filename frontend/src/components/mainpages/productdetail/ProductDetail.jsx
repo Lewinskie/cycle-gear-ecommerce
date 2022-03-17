@@ -46,7 +46,7 @@ const ProductDetail = () => {
         <h2>Related Products</h2>
         <div className="products">
           {products.map((product) => {
-            return product.content === productDetail.content ? (
+            return product.category === productDetail.category ? (
               <ProductItem key={product._id} product={product} />
             ) : null;
           })}

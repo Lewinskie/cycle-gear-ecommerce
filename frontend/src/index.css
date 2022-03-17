@@ -29,3 +29,6 @@ ul li {
 
 /*---------- Product detail-------- */
 @import url("./components/mainpages/productdetail/productdetail.css");
+
+/*--------- Login----------- */
+@import url("./components/mainpages/auth/login.css");
