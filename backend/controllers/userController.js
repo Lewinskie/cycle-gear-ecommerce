@@ -123,6 +123,28 @@ const getUser = async (req, res) => {
   }
 };
 
+//UPDATE CART FUNCTION
+const addcart = async (req, res) => {
+  try {
+    // CHECK IF USER EXISTS
+
+    const user = await User.findById(req.user.id);
+    if (!user) return res.status(400).json({ msg: "User does not exist!" });
+
+    //UPDATE CART
+    await User.findByIdAndUpdate(
+      { _id: req.user.id },
+      {
+        cart: req.body.cart,
+      }
+    );
+
+    return res.json({ msg: "Added to cart" });
+  } catch (error) {
+    return res.status(500).json({ msg: error.message });
+  }
+};
+
 const createAccessToken = (user) => {
   return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1d" });
 };
@@ -132,4 +154,4 @@ exports.login = login;
 exports.logout = logout;
 exports.accessToken = accessToken;
 exports.getUser = getUser;
- 
+exports.addcart = addcart;

@@ -6,6 +6,7 @@ import { GlobalState } from "../../../GlobalState";
 const BtnRender = ({ product }) => {
   const state = useContext(GlobalState);
   const [isAdmin] = state.UserAPI.isAdmin;
+  const addCart = state.UserAPI.addCart;
 
   return (
     <div className="row_btn">
@@ -21,7 +22,9 @@ const BtnRender = ({ product }) => {
       ) : (
         <>
           <Link id="btn_buy" to="#!">
-            <Button sx={{ color: "white" }}>Buy</Button>
+            <Button sx={{ color: "white" }} onClick={() => addCart(product)}>
+              Buy
+            </Button>
           </Link>
           <Link id="btn_view" to={`/detail/${product._id}`}>
             <Button sx={{ color: "white" }}>View</Button>

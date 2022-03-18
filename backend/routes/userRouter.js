@@ -8,5 +8,6 @@ router.post("/login", userController.login);
 router.get("/logout", userController.logout);
 router.get("/access_token", userController.accessToken);
 router.get("/infor", auth, userController.getUser);
+router.patch("/addcart", auth, userController.addcart);
 
 module.exports = router;
