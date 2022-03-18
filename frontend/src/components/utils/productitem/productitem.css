@@ -57,3 +57,10 @@
   background: teal;
   margin-left: 5px;
 }
+
+/* checkbox admin page style  */
+.product_card input {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
