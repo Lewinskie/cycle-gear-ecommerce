@@ -88,7 +88,7 @@ const logout = async (req, res) => {
   }
 };
 
-//REFRESH TOKEN FUNCTION
+//ACESS TOKEN FUNCTION
 const accessToken = (req, res) => {
   try {
     const access_token = req.cookies.accesstoken;

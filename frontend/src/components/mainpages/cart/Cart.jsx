@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GlobalState } from "../../../GlobalState";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import PaypalButton from "./PaypalButton";
 
 const Cart = () => {
   const state = useContext(GlobalState);
@@ -64,6 +64,10 @@ const Cart = () => {
     }
   };
 
+  const transactionSuccess = async (payment) => {
+    console.log(payment);
+  };
+
   if (cart.length === 0) {
     return (
       <h2 style={{ textAlign: "center", fontSize: "4rem" }}>Cart Empty!</h2>
@@ -93,10 +97,15 @@ const Cart = () => {
       ))}
       <div className="total">
         <h3>Total: ksh {total}</h3>
-        <Link to="#!">Payment</Link>
+        <PaypalButton total={total} transactionSuccess={transactionSuccess} />
       </div>
     </div>
   );
 };
+// const client = {
+//   sandbox:
+//     "AR4XrdlyBXnAwEG52_6BQVFeH8ClU0JRJDPQxAU2Za0M_K_P-WupShtYQqjjcAuUHGd3YzLRdcqGocAP",
+//   production: "YOUR-PRODUCTION-APP-ID",
+// };
 
 export default Cart;
