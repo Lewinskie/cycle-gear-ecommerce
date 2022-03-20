@@ -116,10 +116,5 @@ const Cart = () => {
     </div>
   );
 };
-// const client = {
-//   sandbox:
-//     "AR4XrdlyBXnAwEG52_6BQVFeH8ClU0JRJDPQxAU2Za0M_K_P-WupShtYQqjjcAuUHGd3YzLRdcqGocAP",
-//   production: "YOUR-PRODUCTION-APP-ID",
-// };
 
 export default Cart;
