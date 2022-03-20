@@ -8,6 +8,7 @@ const ProductDetail = () => {
   const state = useContext(GlobalState);
 
   const [products] = state.ProductsAPI.products;
+  const addCart = state.UserAPI.addCart;
   const [productDetail, setProductDetail] = useState([]);
   //   console.log(params);
 
@@ -37,7 +38,11 @@ const ProductDetail = () => {
           <p>{productDetail.description}</p>
           <p>{productDetail.content}</p>
           <p>Sold: {productDetail.sold}</p>
-          <Link to="/cart" className="cart">
+          <Link
+            to="/cart"
+            className="cart"
+            onClick={() => addCart(productDetail)}
+          >
             Buy Now
           </Link>
         </div>

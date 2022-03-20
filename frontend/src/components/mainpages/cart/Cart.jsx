@@ -66,6 +66,20 @@ const Cart = () => {
 
   const transactionSuccess = async (payment) => {
     console.log(payment);
+    const { paymentID, address } = payment;
+
+    await axios.post(
+      "/api/payment",
+      { cart, paymentID, address },
+      {
+        headers: { Authorization: token },
+      }
+    );
+
+    //AFTER SUCCESSFUL PURCHASE, CLEAR CART
+    setCart([]);
+    addToCart();
+    alert("You have successfully placed an order");
   };
 
   if (cart.length === 0) {
